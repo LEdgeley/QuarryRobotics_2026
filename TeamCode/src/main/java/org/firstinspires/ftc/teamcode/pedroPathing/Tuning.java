@@ -64,6 +64,7 @@ public class Tuning extends SelectableOpMode {
             s.folder("Manual", p -> {
                 p.add("Translational Tuner", TranslationalTuner::new);
                 p.add("Heading Tuner", HeadingTuner::new);
+                p.add("Translation and Heading Tuner", TranslationalAndHeadingTuner::new);
                 p.add("Drive Tuner", DriveTuner::new);
                 p.add("Line Tuner", Line::new);
                 p.add("Centripetal Tuner", CentripetalTuner::new);
@@ -329,7 +330,7 @@ class TurnTuner extends OpMode {
  */
 class ForwardVelocityTuner extends OpMode {
     private final ArrayList<Double> velocities = new ArrayList<>();
-    public static double DISTANCE = 48;
+    public static double DISTANCE = 96;
     public static double RECORD_NUMBER = 10;
 
     private boolean end;
@@ -536,7 +537,7 @@ class LateralVelocityTuner extends OpMode {
  */
 class ForwardZeroPowerAccelerationTuner extends OpMode {
     private final ArrayList<Double> accelerations = new ArrayList<>();
-    public static double VELOCITY = 30;
+    public static double VELOCITY = 50;
 
     private double previousVelocity;
     private long previousTimeNano;
@@ -642,7 +643,7 @@ class ForwardZeroPowerAccelerationTuner extends OpMode {
  */
 class LateralZeroPowerAccelerationTuner extends OpMode {
     private final ArrayList<Double> accelerations = new ArrayList<>();
-    public static double VELOCITY = 30;
+    public static double VELOCITY = 40;
     private double previousVelocity;
     private long previousTimeNano;
     private boolean stopping;
